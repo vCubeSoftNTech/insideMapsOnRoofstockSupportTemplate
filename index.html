@@ -9,10 +9,14 @@
     <link rel="icon" href="img/favicon-terminal.ico" type="image/gif" sizes="16x16">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css"> -->
+    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.4/ui-bootstrap-tpls.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script> -->
+
 
     <script>
         var app = angular.module('InsideMapsData', ['ui.bootstrap']);
@@ -84,8 +88,8 @@
             margin-top: 1.25%;
         }
 
-        .bg-faq{
-          padding-bottom: 10%
+        .bg-faq {
+            padding-bottom: 10%
         }
 
         .faq-heading {
@@ -96,8 +100,8 @@
             padding: 30px 0 0 0;
         }
 
-        .faq-heading hr{
-          border-top: 1px solid #ddd;
+        .faq-heading hr {
+            border-top: 1px solid #ddd;
         }
 
         .navbar {
@@ -114,6 +118,12 @@
             color: #ddd;
         }
 
+        .icon-bar {
+            color: #ddd;
+            border-color: #ddd;
+            background-color: #ddd;
+        }
+
         .nav>li>a:focus,
         .navbar-nav>li>a:hover {
             background-color: transparent;
@@ -126,7 +136,7 @@
         }
 
         .bg-user-guide hr {
-            border-top: 1px solid #c3c3c3;
+            border-top: 1px solid #ddd;
         }
 
         .help-tutorials p {
@@ -159,22 +169,23 @@
             padding: 0 10px 0 4px;
         }
 
-        .category-all{
-           border-left: 1px solid #ddd;
+        .category-all {
+            border-left: 1px solid #ddd;
         }
 
-        .category-all h3{
-          padding: 0 0 2% 15%;
-          color: #656565;
+        .category-all h3 {
+            padding: 0 0 2% 15%;
+            color: #656565;
         }
 
-        .category-all div{
-          padding-left: 15%;
+        .category-all div {
+            padding-left: 15%;
         }
 
-        .category-all p{
-          padding-left: 15%;
+        .category-all p {
+            padding-left: 15%;
             color: #605ca8;
+            font-size: 15px;
         }
 
         .category-highlight {
@@ -221,15 +232,15 @@
                     </div>
                     <div class="col-sm-1"></div>
                     <div class="col-sm-3">
-                      <div class="category-all">
-                        <h3>Search FAQs</h3><br><br>
-                        <div class="input-group input-group-lg">
-                            <input type="text" class="form-control" ng-model="search" placeholder="Search" placeholder="Search">
-                        </div><br><br>
-                        <h3>Categories</h3>
-                        <p ng-class="{'category-highlight': qasCategory == ''}" ng-click="filterQuestionsByCategory('')">All FAQs</p>
-                        <p ng-class="{'category-highlight': cat == qasCategory}" ng-repeat="cat in categories" ng-click="filterQuestionsByCategory(cat)">{{cat}}</p>
-                      </div>
+                        <div class="category-all">
+                            <h3>Search FAQs</h3><br><br>
+                            <div class="input-group input-group-lg">
+                                <input type="text" class="form-control" ng-model="search" placeholder="Search" placeholder="Search">
+                            </div><br><br>
+                            <h3>Categories</h3>
+                            <p ng-class="{'category-highlight': qasCategory == ''}" ng-click="filterQuestionsByCategory('')">All FAQs</p>
+                            <p ng-class="{'category-highlight': cat == qasCategory}" ng-repeat="cat in categories" ng-click="filterQuestionsByCategory(cat)">{{cat}}</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -269,6 +280,17 @@
                     </div>
                 </div>
             </div>
+            <!-- <div class="fixed-action-btn horizontal click-to-toggle">
+                <a class="btn-floating btn-large red">
+                    <i class="material-icons">menu</i>
+                </a>
+                <ul>
+                    <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
+                    <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
+                    <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
+                    <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
+                </ul>
+            </div> -->
         </div>
     </div>
 </body>
