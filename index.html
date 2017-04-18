@@ -17,35 +17,59 @@
     <script>
         var app = angular.module('InsideMapsData', ['ui.bootstrap']);
         app.controller('MainCtrl', function($scope) {
-          $scope.qas = [
-       {
-         question: 'How long will it take to capture a property?',
-         answer: "On average 1000 square feet will take 15-25 minutes."
-       },{
-         question: 'Why is it taking so long for my project to upload?',
-         answer: "Upload speeds are based on your wifi signal and your internet connection.  Place your iPhone / iPod close to your router, or the source of wifi, to ensure a good signal.  Keep in mind streaming media, or other activities such as video games may use up a considerable amount of your internet bandwidth and thus slow down the upload of your project. "
-       },{
-         question: 'How do I know if all my photos have uploaded successfully?',
-         answer: "Once you select finish project, you will see a cloud icon with a progress bar appear next to your project, and a notification appears at the top of the screen letting you know your project is uploading. You must keep the InsideMaps Capture app window open until the upload is finished.  If the app is minimized or closed the upload will pause. Keep in mind you must have access to wifi to upload, otherwise, the app will wait until a wifi connection is available. When the upload is complete the progress bar will disappear, and you will receive an email notification that your project has been submitted."
-       },{
-         question: 'How much free space should I have on my iPhone / iPod?',
-         answer: "At least 16gb is recommended."
-       },{
-         question: 'What happens to the photos on my iPhone / iPod after they have been uploaded?',
-         answer: "Project related photos and data will be automatically deleted once they have been uploaded to the InsideMaps website."
-       },{
-         question: 'Can I do a test project without paying?',
-         answer: "Yes. All projects can be demo'd by the owner before making payment.  Keep in mind that projects that have not been payed for are only viewable by the project owner, while logged into insidemaps.com.  Unpaid projects will expire and become un-viewable after 1-2 weeks."
-       },{
-         question: 'How do I pay for my projects?',
-         answer: "When a project is complete, you will receive an email notification.  Select the 'Click Here to Explore' button, this will take you to that project's listing page.  At the top of the page you will see a notification that reads click here to pay and make this project public."
-       },{
-         question: 'My project was submitted over 24 hours ago, but it still has not finished, why?',
-         answer: "In order to ensure that a project is completed in a timely manner there are two steps that a user must complete.  The first important step, which is often overlooked, is to press the 'Finish Project' button.  This lets our system know that no new data is going to be coming in and processing can begin.  The second step is to make sure all of the photos upload. The app must remain open during uploading, if the app is minimized uploading will be paused."
-       },{
-         question: 'How much storage space do I need on my phone to capture a property?',
-         answer: "Five average sized homes will require approximately 16gb of storage space.  After each project’s photos are uploaded they will be automatically deleted freeing up the space required by that project.  Uploading will occur automatically whenever your phone is connected to wifi."
-       }]
+          $scope.categories = ["Scanning","App","Hero","Payments", "Projects"];
+           $scope.filterQuestionsByCategory = function(category){
+             console.log(category);
+             $scope.search = category;
+
+           }
+            $scope.qas = [{
+                    category: "Scanning",
+                    question: 'What tripod should I use with InsideMaps?',
+                    answer: "We recommend a sturdy professional tripod (without a panning handle) suitable for DSLR cameras."
+                },
+                {
+                    category: "Scanning",
+                    question: 'How long will it take to capture a property?',
+                    answer: "On average 1000 square feet will take 15-25 minutes."
+                }, {
+                    category: "Scanning",
+                    question: 'Why is it taking so long for my project to upload?',
+                    answer: "Upload speeds are based on your wifi signal and your internet connection.  Place your iPhone / iPod close to your router, or the source of wifi, to ensure a good signal.  Keep in mind streaming media, or other activities such as video games may use up a considerable amount of your internet bandwidth and thus slow down the upload of your project. "
+                }, {
+                    category: "App",
+                    question: 'How do I know if all my photos have uploaded successfully?',
+                    answer: "Once you select finish project, you will see a cloud icon with a progress bar appear next to your project, and a notification appears at the top of the screen letting you know your project is uploading. You must keep the InsideMaps Capture app window open until the upload is finished.  If the app is minimized or closed the upload will pause. Keep in mind you must have access to wifi to upload, otherwise, the app will wait until a wifi connection is available. When the upload is complete the progress bar will disappear, and you will receive an email notification that your project has been submitted."
+                }, {
+                    category: "App",
+                    question: 'How much free space should I have on my iPhone / iPod?',
+                    answer: "At least 16gb is recommended."
+                }, {
+                    category: "App",
+                    question: 'What happens to the photos on my iPhone / iPod after they have been uploaded?',
+                    answer: "Project related photos and data will be automatically deleted once they have been uploaded to the InsideMaps website."
+                }, {
+                    category: "Hero",
+                    question: 'How do I establish a bluetooth connection between my iPhone and the HERO device?',
+                    answer: "First make sure that bluetooth is turned on in your phone’s settings.  Then when the InsideMaps app prompts you to sync, press the small black button on the side of the HERO device where the green light is.  Always make sure your iPhone and HERO are fully charged before attempting a capture."
+                }, {
+                    category: "Payments",
+                    question: 'Can I do a test project without paying?',
+                    answer: "Yes. All projects can be demo'd by the owner before making payment.  Keep in mind that projects that have not been payed for are only viewable by the project owner, while logged into insidemaps.com.  Unpaid projects will expire and become un-viewable after 1-2 weeks."
+                }, {
+                    category: "Payments",
+                    question: 'How do I pay for my projects?',
+                    answer: "When a project is complete, you will receive an email notification.  Select the 'Click Here to Explore' button, this will take you to that project's listing page.  At the top of the page you will see a notification that reads click here to pay and make this project public."
+                }, {
+                    category: "Projects",
+                    question: 'My project was submitted over 24 hours ago, but it still has not finished, why?',
+                    answer: "In order to ensure that a project is completed in a timely manner there are two steps that a user must complete.  The first important step, which is often overlooked, is to press the 'Finish Project' button.  This lets our system know that no new data is going to be coming in and processing can begin.  The second step is to make sure all of the photos upload. The app must remain open during uploading, if the app is minimized uploading will be paused."
+                }, {
+                    category: "Projects",
+                    question: 'How much storage space do I need on my phone to capture a property?',
+                    answer: "Five average sized homes will require approximately 16gb of storage space.  After each project’s photos are uploaded they will be automatically deleted freeing up the space required by that project.  Uploading will occur automatically whenever your phone is connected to wifi."
+                }
+            ]
 
         });
     </script>
@@ -60,11 +84,11 @@
         }
 
         .faq-heading {
-          color: #f17422;
-          text-align: center;
-          font-style: italic;
-          font-size: 26px;
-          padding: 30px 0 0 0;
+            color: #f17422;
+            text-align: center;
+            font-style: italic;
+            font-size: 26px;
+            padding: 30px 0 0 0;
         }
 
         .navbar {
@@ -104,24 +128,26 @@
             font-weight: bold;
             font-size: 18px;
         }
+
         .faq-question {
-          color: #605ca8;
-          font-size: 20px;
-          font-style: italic;
-          padding: 25px 0 15px 0;
+            color: #605ca8;
+            font-size: 20px;
+            font-style: italic;
+            padding: 25px 0 15px 0;
         }
-        .faq-question span{
-          color: #656565;
-          font-size: 22px;
-          padding: 0 10px 0 0;
+
+        .faq-question span {
+            color: #656565;
+            font-size: 22px;
+            padding: 0 10px 0 0;
         }
 
         .faq-answer {
-          color: #656565;
+            color: #656565;
         }
 
-        .faq-answer span{
-          padding: 0 10px 0 4px;
+        .faq-answer span {
+            padding: 0 10px 0 4px;
         }
     </style>
 </head>
@@ -155,9 +181,21 @@
                     <h3>Frequently Asked Questions</h3>
                     <hr></hr>
                 </div>
-                <div class="" ng-repeat="qa in qas">
-                    <h3 class="faq-question"><span>Q:</span>{{qa.question}}</h3>
-                    <p class="faq-answer"><span>A:</span>{{qa.answer}}</p>
+                <div class="row">
+                    <div class="col-sm-8">
+                        <div ng-repeat="qa in qas | filter:search | orderBy:'category'">
+                            <h3 class="faq-question"><span>Q:</span>{{qa.question}}</h3>
+                            <p class="faq-answer"><span>A:</span>{{qa.answer}}</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <h3>Search FAQs</h3>
+                        <input type="text" ng-model="search" placeholder="Search" />
+                        <h3 ng-click="filterQuestionsByCategory('')">All FAQs</h3>
+                        <p ng-repeat="cat in categories" ng-click="filterQuestionsByCategory(cat)">{{cat}}</p>
+
+
+                    </div>
                 </div>
             </div>
 
